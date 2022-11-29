@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  mongodb:
+    image: 'bitnami/mongodb:4.4'
+    container_name: harvest-talent-builder
+    ports:
+      - '27017:27017'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MONGODB_ADVERTISED_HOSTNAME=localhost
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_REPLICA_SET_NAME=replicaset
+      - MONGODB_EXTRA_FLAGS=--bind_ip_all
